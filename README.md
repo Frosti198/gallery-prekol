@@ -58,6 +58,7 @@ For users without Google Play access, install the apk from the [**latest release
 ## ⌨️ Development
 
 Check out the [development notes](DEVELOPMENT.md) for instructions about how to build the app locally.
+For bringing your own local LiteRT model into the app, see [MODEL_IMPORT_GUIDE.md](MODEL_IMPORT_GUIDE.md).
 
 ## 🤝 Feedback
 
