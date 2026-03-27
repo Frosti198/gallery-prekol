@@ -10,6 +10,8 @@ The app currently accepts only local model files with one of these extensions:
 - `.task`
 
 If a file name contains `-web`, the app treats it as a web-only model and blocks import.
+This prevents importing artifacts intended for browser/web runtimes that are not compatible with
+the app's on-device native runtime path.
 
 ## Step-by-step import in the app (Android)
 
@@ -22,7 +24,7 @@ If a file name contains `-web`, the app treats it as a web-only model and blocks
    - `defaultTopk`
    - `defaultTopp`
    - `defaultTemperature`
-   - capability flags (`supportImage`, `supportAudio`, `supportTinyGarden`, `supportMobileActions`, `supportThinking`)
+- capability flags (`supportImage`, `supportAudio`, `supportTinyGarden`, `supportMobileActions`, `supportThinking`)
    - compatible accelerators (`CPU`, `GPU`, `NPU`, depending on device)
 6. Tap **Import** and wait for copy to finish.
 
@@ -39,6 +41,8 @@ The app registers imported models as LLM models and enables tasks based on selec
 - Enabled when `supportAudio = true`: **Audio Scribe**
 - Enabled when `supportTinyGarden = true`: **Tiny Garden**
 - Enabled when `supportMobileActions = true`: **Mobile Actions**
+- `supportThinking` does not add a separate task; it enables the optional **Enable thinking** chat
+  config for that model.
 
 ## Notes for preparing your own model
 
